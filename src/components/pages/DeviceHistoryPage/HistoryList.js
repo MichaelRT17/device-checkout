@@ -36,17 +36,17 @@ const styles = theme => ({
 });
 
 let id = 0;
-function createData(device, time, user) {
+function createData(status, time, user) {
   id += 1;
-  return { id, device, time, user };
+  return { id, status, time, user };
 }
 
 const rows = [
-  createData('Galaxy s9', 'Monday Nov 12, 9:38am', 'Michael Thurman'),
-  createData('iPhone X', 'Wednesday Nov 14, 4:21pm', 'Kyle Wheelhouse'),
-  createData('iPad Mini 4th Gen', 'Tuesday Nov 6, 12:20pm', 'Michael Thurman'),
-  createData('Nexus 4', 'Thursday Nov 15, 7:21am', 'Bryan Humpherys'),
-  createData('iPhone 6+', 'Monday Nov 19, 5:13pm', 'Jacob West'),
+  createData('In', 'Tuesday Nov 6, 12:20pm', '-'),
+  createData('Out', 'Monday Nov 12, 9:38am', 'Kyle Wheelhouse'),
+  createData('In', 'Wednesday Nov 14, 4:21pm', '-'),
+  createData('Out', 'Thursday Nov 15, 7:21am', 'Bryan Humpherys'),
+  createData('In', 'Monday Nov 19, 5:13pm', '-'),
 ];
 
 function CustomizedTable(props) {
@@ -57,7 +57,7 @@ function CustomizedTable(props) {
       <Table className={classes.table}>
         <TableHead>
           <TableRow>
-            <CustomTableCell>Device</CustomTableCell>
+            <CustomTableCell>Status</CustomTableCell>
             <CustomTableCell>Time</CustomTableCell>
             <CustomTableCell>User</CustomTableCell>
           </TableRow>
@@ -67,7 +67,7 @@ function CustomizedTable(props) {
             return (
               <TableRow className={classes.row} key={row.id}>
                 <CustomTableCell component="th" scope="row">
-                  {row.device}
+                  {row.status}
                 </CustomTableCell>
                 <CustomTableCell>{row.time}</CustomTableCell>
                 <CustomTableCell>{row.user}</CustomTableCell>

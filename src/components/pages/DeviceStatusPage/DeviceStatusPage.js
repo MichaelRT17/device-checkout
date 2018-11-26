@@ -7,7 +7,6 @@ export default class DeviceStatusPage extends Component {
         return (
             <div>
                 <h1>DeviceStatusPage</h1>
-                {/* <DeviceList /> */}
                 <DeviceDropDown >
                     <DeviceList />
                 </DeviceDropDown>
