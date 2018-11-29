@@ -9,10 +9,7 @@ const styles = theme => ({
     button: {
         margin: theme.spacing.unit,
         color: "#0B5666"
-    },
-    input: {
-        display: 'none',
-    },
+    }
 });
 
 function HomePage(props) {

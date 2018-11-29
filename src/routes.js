@@ -5,6 +5,7 @@ import AccountCreationPage from './components/pages/AccountCreationPage';
 import DeviceStatusPage from './components/pages/DeviceStatusPage/DeviceStatusPage';
 import DeviceHistoryPage from './components/pages/DeviceHistoryPage/DeviceHistoryPage';
 import UserGenerationPage from './components/pages/UserGenerationPage/UserGenerationPage';
+import UserListPage from './components/pages/UserListPage/UserListPage';
 
 export default (
     <Switch>
@@ -13,5 +14,6 @@ export default (
         <Route path='/:company_id/status' component={DeviceStatusPage}/>
         <Route path='/:company_id/history/:device_id' component={DeviceHistoryPage}/>
         <Route path='/:company_id/generate-user' component={UserGenerationPage}/>
+        <Route path='/:company_id/users' component={UserListPage} />
     </Switch>
 )

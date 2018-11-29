@@ -15,7 +15,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import HelpIcon from '@material-ui/icons/HelpOutlined';
 import DeviceUnknownIcon from '@material-ui/icons/DeviceUnknown';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
+import GroupIcon from '@material-ui/icons/Group';
+import GroupAddIcon from '@material-ui/icons/GroupAdd';
 import { Link } from 'react-router-dom';
 
 const styles = {
@@ -64,9 +65,15 @@ class ButtonAppBar extends Component {
                             <ListItemText primary="Device Status" />
                         </ListItem>
                     </Link>
+                    <Link to='/:company_id/users'>
+                        <ListItem button>
+                            <ListItemIcon><GroupIcon /></ListItemIcon>
+                            <ListItemText primary="All Users" />
+                        </ListItem>
+                    </Link>
                     <Link to='/:company_id/generate-user'>
                         <ListItem button>
-                            <ListItemIcon><AccountCircleIcon /></ListItemIcon>
+                            <ListItemIcon><GroupAddIcon /></ListItemIcon>
                             <ListItemText primary="Generate User (QR code)" />
                         </ListItem>
                     </Link>

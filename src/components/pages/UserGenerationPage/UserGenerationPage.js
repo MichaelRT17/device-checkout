@@ -1,29 +1,55 @@
 import React, { Component } from 'react';
 import QRCode from 'react-qr-code';
+import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
-export default class UserGenerationPage extends Component {
+const styles = theme => ({
+    button: {
+        margin: theme.spacing.unit,
+        color: "#0B5666"
+    },
+    input: {
+        textAlign: "center",
+        color: 'red'
+    }
+});
+
+class UserGenerationPage extends Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            value: ""
+            name: "name"
         }
     }
 
-    handleUpdate(input) {
+    handleUpdate = name => event => {
         this.setState({
-            value: input
-        })
-    }
+            [name]: event.target.value
+        });
+    };
 
     render() {
-        console.log(this.state.value)
+        const { classes } = this.props;
         return (
             <div>
-                <QRCode value={this.state.value} />
+                <h2>You are creating a new user for the Legrand Team</h2>
+                <QRCode value={this.state.name} />
                 <br />
-                <input onChange={e => this.handleUpdate(e.target.value)}/>
+                <br />
+                <input className={classes.input} onChange={this.handleUpdate('name')}/>
+                <br />
+                <Button variant="contained" className={classes.button}>
+                    Create User
+                </Button>
             </div>
         )
     }
 }
+
+UserGenerationPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+};
+
+export default withStyles(styles)(UserGenerationPage);
